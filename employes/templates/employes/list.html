@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Employe List{% endblock %}
+{% block head %}Employes App{% endblock %}
+{% block header %}Employes List{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="header">
+    <a href="{% url 'add_employe' %}" class="btn btn-sm btn-info text-white">Add Employe</a>
+    <br> <br>
+</div>
+<table class="table" style="background-color: rgb(245, 243, 243);">
+    <thead class="bg-dark text-white p-4">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Pay</th>
+        <th>Address</th>
+        <th>Mobile_No</th>
+        <th>Gender</th>
+        <th>Employe_cetagory</th>
+    </thead>
+    <tbody>
+        {% for person in emp %}
+            <tr>
+                <td class="p-3"><a href="{% url 'employe_details' person.id %}">{{ person.name }}</a></td>
+                <td>{{ person.email }}</td>
+                <td>{{ person.pay }}</td>
+                <td>{{ person.address }}</td>
+                <td>{{ person.mobile_no }}</td>
+                <td>{{ person.gender }}</td>
+                <td>{{ person.employe_categories }}</td>
+            </tr>
+        {% endfor %}            
+    </tbody>
+</table>
+{% endblock %}

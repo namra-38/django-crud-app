@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Employe Details{% endblock %}
+{% block head %}Employes App{% endblock %}
+{% block header %}Employes Details{% endblock %}
+
+{% block content %}
+<br><br>
+    <div style="width: 25rem;" class="card mx-auto">
+        <div class="h3 card-header text-center">Employe Card</div>
+        <div class="card-body mx-auto">
+            <p style="font-size: 20px;"><strong>Name:</strong>{{ emp.name }}</p>
+            <p style="font-size: 20px;"><strong>Email:</strong>{{ emp.email }}</p>
+            <p style="font-size: 20px;"><strong>Pay:</strong>{{ emp.pay }}</p>
+            <p style="font-size: 20px;"><strong>Address:</strong>{{ emp.address }}</p>
+            <p style="font-size: 20px;"><strong>Mobile_No:</strong>{{ emp.mobile_no }}</p>
+            <p style="font-size: 20px;"><strong>Gender:</strong>{{ emp.gender }}</p>
+            <p style="font-size: 20px;"><strong>Employe_cetagory:</strong>{{ emp.employe_categories }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'detele_employe' emp.id %}" class="btn btn-sm btn-danger">Delete</a>
+            <a href="{% url 'edit_employe' emp.id %}" class="btn btn-sm btn-primary">Edit</a>
+        </div>
+    </div>
+{% endblock %}    

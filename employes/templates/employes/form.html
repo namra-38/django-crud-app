@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Add New Employe{% endblock %}
+{% block header %}Add New Employe{% endblock %}
+{% block content %}
+    <form action="." method="POST" class="w-50 mx-auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add Employe" class="btn btn-success">
+    </form>
+{% endblock %}    
